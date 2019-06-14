@@ -28,7 +28,7 @@ $("button").click(function(){
         // console.log(dessert);
     }
 
-    var giphyURL = "http://api.giphy.com/v1/gifs/search?q=";
+    var giphyURL = "https://api.giphy.com/v1/gifs/search?q=";
 
     var apiKey = "&api_key=JhUuqfOCueTKTawnI341YWWf4UNUbb0Z&limit=10";
     var queryURL = giphyURL + dessert + apiKey;
