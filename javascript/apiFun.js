@@ -12,10 +12,21 @@ for(var i = 0; i < topics.length; i++){
 }
 
 $("button").click(function(){
+    
+    if(this.attributes["id"]!== undefined){
+      if(this.attributes["id"].value === "submit"){
 
+        var dessert =  $("#dessertAdd").val();
+        topics.push(dessert);
 
-    var dessert = $(this).data("topic");
-    // console.log(dessert);
+        var buttonToddler = $("<button data-topic=" + dessert + ">" + dessert + "</button>");
+        buttonToddler.appendTo("#buttonPlace");
+
+        console.log("Works");
+    }} else {
+        var dessert = $(this).data("topic");
+        // console.log(dessert);
+    }
 
     var giphyURL = "http://api.giphy.com/v1/gifs/search?q=";
 
@@ -30,9 +41,11 @@ $("button").click(function(){
   .then(function(response){
 
     var gifs = response.data;
+    $("#gifContainer").html("");
 
     for(var i = 0; i < gifs.length; i++){
-        var gifPlace = $("<div>");
+
+        var gifPlace = $('<div id="pleaseInline">');
         // '<img src="some-source" />'
         // var dessertImage = $('<img class="gif" data-still=" ' + gifs[i].images.fixed_height_still.url + ' data-animate="' + gifs[i].images.fixed_height.url + 'data-state= "still">');
         var dessertImage = $('<img id= "gif">');
@@ -43,8 +56,6 @@ $("button").click(function(){
         console.log(link);
         dessertImage.attr('src',link);
 
-      
-
         var rating = gifs[i].rating;
         var ratingDisplay = $("<p>").html("Rating: " + rating);
 
@@ -54,6 +65,7 @@ $("button").click(function(){
         gifPlace.append(dessertImage);
         
         $("#gifContainer").prepend(gifPlace);
+
 
         
 $("#gif").click(function(){
@@ -80,6 +92,8 @@ $("#gif").click(function(){
 
 
 
+
+
     }
     
 
@@ -94,6 +108,7 @@ $("#gif").click(function(){
 
 
 });
+
 
 
 
