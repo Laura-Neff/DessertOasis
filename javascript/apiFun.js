@@ -30,7 +30,7 @@ $("button").click(function(){
 
     var giphyURL = "https://api.giphy.com/v1/gifs/search?q=";
 
-    var apiKey = "&api_key=JhUuqfOCueTKTawnI341YWWf4UNUbb0Z&limit=10";
+    var apiKey = config.API_KEY;
     var queryURL = giphyURL + dessert + apiKey;
 
   $.ajax({
