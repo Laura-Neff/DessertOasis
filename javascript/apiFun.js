@@ -1,4 +1,4 @@
-const config = require('./config.json');
+const config = require('./config.js');
 
 var topics = ["Tiramisu", "Pavlova", "Profiteroles", "Pie", "Macaron", "Churros", "Sachertorte", "Flan", "Doughnuts", "Milkshake", "Boba", "Cupcake", 'Smores', "Cookies"];
 
